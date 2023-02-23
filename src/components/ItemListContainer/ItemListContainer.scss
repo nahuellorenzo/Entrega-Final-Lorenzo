@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.containerList{
+    margin: 40px auto;
+    max-width: 900px;
+    padding: 0rem 1rem;
+    hr{
+        border-top:solid;
+        --tw-bg-opacity: 1;
+        color: rgb(31 41 55/ var(--tw-bg-opacity));
+    }
+    .h2__containerList{
+        font-size: 1.5rem;
+        --tw-bg-opacity: 1;
+        color: rgb(31 41 55/ var(--tw-bg-opacity));
+        font-weight: 800;
+        font-family: 'Roboto', sans-serif;
+    }
+}

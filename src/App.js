@@ -1,14 +1,13 @@
 import './App.css';
-import Example from './components/NavBar/Navbar.js';
+import Navbar from './components/NavBar/Navbar.js';
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer.js'
 
 function App() {
-  
-  
 
   return (
     <section>
-      <Example></Example>
-      
+      <Navbar></Navbar>
+      <ItemListContainer greeting="Lista de productos"></ItemListContainer>
     </section>
   );
 }

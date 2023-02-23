@@ -1,8 +1,9 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import logo from './logoNahue.png'
 import logo2 from './prueba3.png'
+import { CartWidget } from './CartWidget/CartWidget'
 
 const navigation = [
     { name: 'Vodka', href: '#', current: true },
@@ -15,9 +16,9 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function NavBar() {
     return (
-        <Disclosure as="nav" className="bg-gray-800 fixed top-0 left-0 right-0">
+        <Disclosure as="nav" className="bg-gray-800 sticky top-0 left-0 right-0">
             {({ open }) => (
                 <>
                     <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -78,7 +79,7 @@ export default function Example() {
                                     className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                                 >
                                     <span className="sr-only">View notifications</span>
-                                    <BellIcon className="h-6 w-6" aria-hidden="true" />
+                                    <CartWidget className="h-6 w-6" aria-hidden="true" />
                                 </button>
 
                                 {/* Profile dropdown */}
