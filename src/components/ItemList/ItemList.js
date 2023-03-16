@@ -7,7 +7,7 @@ const ItemList = ( {items} ) => {
             <h2>Productos</h2>
             <hr/>
 
-            <div className="flex flex-wrap -mx-2">
+            <div className="flex flex-wrap justify-center sm:justify-start -mx-2">
                 {items.map((producto) => <Item key={producto.id} item={producto}/>)}
             </div>
         </div>
