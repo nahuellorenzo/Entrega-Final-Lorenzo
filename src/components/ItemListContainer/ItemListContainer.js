@@ -1,6 +1,7 @@
 import './ItemListContainer.scss'
 import { useEffect, useState } from 'react'
 import { pedirDatos } from '../../helpers/pedirDatos'
+import  ItemList  from '../ItemList/ItemList'
 
 
 export const ItemListContainer = ( {greeting} ) => {
@@ -27,16 +28,7 @@ export const ItemListContainer = ( {greeting} ) => {
             {
                 loading 
                     ? <h2>Cargando...</h2> 
-                    : <div><h2 className='h2__containerList'>{greeting}</h2><hr></hr>
-                        { productos.map((producto) => {
-                            return (
-                            <div key={producto.id}>
-                                <h3>{producto.nombre}</h3>
-                                <img src={producto.img} alt={producto.nombre}></img>
-                                <p>{producto.precio}</p>
-                            </div>)
-                        }) }
-                    </div>
+                    : <ItemList items={productos}/>
             }
         </div>
     )
