@@ -4,12 +4,14 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import logo from './logoNahue.png'
 import logo2 from './prueba3.png'
 import { CartWidget } from './CartWidget/CartWidget'
+import { Link } from 'react-router-dom'
 
 const navigation = [
-    { name: 'Vodka', href: '#', current: true },
-    { name: 'Cervezas', href: '#', current: false },
-    { name: 'Whiskys', href: '#', current: false },
-    { name: 'Vinos', href: '#', current: false },
+    { name: 'Inicio', href:'/', current: true },
+    { name: 'Vodka', href: 'category/vodka', current: false },
+    { name: 'Sidras', href: 'category/sidra', current: false },
+    { name: 'Whiskys', href: 'category/whisky', current: false },
+    { name: 'Gin', href: 'category/gin', current: false },
 ]
 
 function classNames(...classes) {
@@ -36,23 +38,23 @@ export default function NavBar() {
                             </div>
                             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                                 <div className="flex flex-shrink-0 items-center">
-                                    <img
+                                    <Link to='/'><img                                       
                                         className="block h-8 w-auto lg:hidden"
                                         src={logo}
                                         alt="Your Company"
-                                    />
-                                    <img
+                                    /></Link>
+                                    <Link to='/'><img
                                         className="hidden h-8 w-auto lg:block"
                                         src={logo2}
                                         alt="Your Company"
-                                    />
+                                    /></Link>
                                 </div>
                                 <div className="hidden sm:ml-6 sm:block">
                                     <div className="flex space-x-4">
                                         {navigation.map((item) => (
-                                            <a
+                                            <Link
                                                 key={item.name}
-                                                href={item.href}
+                                                to={item.href}
                                                 className={classNames(
                                                     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                                                     'px-3 py-2 rounded-md text-sm font-medium'
@@ -68,7 +70,7 @@ export default function NavBar() {
                                                 }}
                                             >
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         ))}
                                     </div>
                                 </div>
