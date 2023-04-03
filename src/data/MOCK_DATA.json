@@ -5,6 +5,7 @@
         "precio": 1500,
         "litros": "750ml",
         "img": "https://www.espaciovino.com.ar/media/default/0001/58/thumb_57267_default_big.jpeg",
+        "stock": 10,
         "category": "vodka"
     },
     {
@@ -13,6 +14,7 @@
         "precio": 1600,
         "litros": "750ml",
         "img": "https://www.vinosyspirits.com/media/catalog/product/s/m/smf_watermelon_685x1200.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:",
+        "stock": 12,
         "category": "vodka"
     },
     {
@@ -21,6 +23,7 @@
         "precio": 11000,
         "litros": "750ml",
         "img": "https://http2.mlstatic.com/D_NQ_NP_823798-MLA49683860623_042022-O.webp",
+        "stock": 18,
         "category": "vodka"
     },
     {
@@ -29,6 +32,7 @@
         "precio": 3400,
         "litros": "750ml",
         "img": "https://www.absolut.com/globalassets/images/products/absolut-mango/absolut-mango_1000ml4x.jpg?imwidth=300",
+        "stock": 19,
         "category": "vodka"
     },
     {
@@ -37,6 +41,7 @@
         "precio": 10000,
         "litros": "1000ml",
         "img": "https://www.absolut.com/globalassets/images/products/absolut-elyx/absolut-elyx_1000ml4x.jpg?imwidth=300",
+        "stock": 9,
         "category": "vodka"
     },
     {
@@ -45,6 +50,7 @@
         "precio": 8500,
         "litros": "750ml",
         "img": "https://www.absolut.com/globalassets/images/products/absolut-extrakt/absolut-extrakt_1000ml4x.jpg?imwidth=300",
+        "stock": 5,
         "category": "vodka"
     },
     {
@@ -53,6 +59,7 @@
         "precio": 5500,
         "litros": "750ml",
         "img": "https://www.absolut.com/globalassets/images/products/absolut-vanilia/absolut-vanilia_1000ml4x.jpg",
+        "stock": 14,
         "category": "vodka"
     },
     {
@@ -61,6 +68,7 @@
         "precio": 5800,
         "litros": "750ml",
         "img": "https://www.absolut.com/globalassets/images/products/absolut-lime/absolut-lime_1000ml4x.jpg?imwidth=300",
+        "stock": 16,
         "category": "vodka"
     },
     {
@@ -69,6 +77,7 @@
         "precio": 2100,
         "litros": "750ml",
         "img": "https://http2.mlstatic.com/D_NQ_NP_954444-MLA50278032217_062022-O.webp",
+        "stock": 8,
         "category": "gin"
     },
     {
@@ -77,6 +86,7 @@
         "precio": 3500,
         "litros": "750ml",
         "img": "https://www.absolut.com/globalassets/images/products/absolut-vodka/atlas/atlas_absolut-vodka_1000ml_4x.jpg?imwidth=300",
+        "stock": 6,
         "category": "vodka"
     },
     {
@@ -85,6 +95,7 @@
         "precio": 5400,
         "litros": "750ml",
         "img": "https://www.absolut.com/globalassets/images/products/absolut-apple/absolut-apple_1000ml4x.jpg?imwidth=300",
+        "stock": 13,
         "category": "vodka"
     },
     {
@@ -93,6 +104,7 @@
         "precio": 15000,
         "litros": "1000ml",
         "img": "https://www.absolut.com/globalassets/images/products/absolut-100/absolut-100_1000ml4x.jpg",
+        "stock": 20,
         "category": "vodka"
     },
     {
@@ -101,6 +113,7 @@
         "precio": 4500,
         "litros": "750ml",
         "img": "https://http2.mlstatic.com/D_NQ_NP_697545-MLA49179817943_022022-O.webp",
+        "stock": 22,
         "category": "whisky"
     },
     {
@@ -109,6 +122,7 @@
         "precio": 1800,
         "litros": "750ml",
         "img": "https://http2.mlstatic.com/D_NQ_NP_876937-MLA31017675631_062019-O.webp",
+        "stock": 28,
         "category": "vodka"
     },
     {
@@ -117,6 +131,7 @@
         "precio": 1300,
         "litros": "750ml",
         "img": "https://disario.cart.sig2k.com/img/p/2/3/6/9/2369-large_default.jpg",
+        "stock": 31,
         "category": "sidra"
     },
     {
@@ -125,6 +140,7 @@
         "precio": 1900,
         "litros": "750ml",
         "img": "https://http2.mlstatic.com/D_NQ_NP_655432-MLA47431995657_092021-O.webp",
+        "stock": 4,
         "category": "sidra"
     }
 ]
