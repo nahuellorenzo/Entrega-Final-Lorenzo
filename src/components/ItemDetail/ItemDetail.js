@@ -1,8 +1,11 @@
-import { useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { useState, useContext } from "react"
 import { ItemCount } from "../ItemCount/ItemCount"
+import { CartContext } from "../../context/CartContext"
 
 export const ItemDetail = ({item}) => {
+
+    const {agregarAlCarrito, isInCart} = useContext(CartContext)
 
     const navigate = useNavigate()
     const [disabled, setDisabled] = useState(true)
@@ -18,7 +21,7 @@ export const ItemDetail = ({item}) => {
             cont
         }
 
-        console.log(newItem)
+        agregarAlCarrito(newItem)
     }
 
     return(
@@ -29,16 +32,19 @@ export const ItemDetail = ({item}) => {
             </div>
             <p className="text-center">${item.precio}</p>
             <p className="text-center">{item.litros}</p>
-            <ItemCount
-                max={item.stock}
-                cont={cont}
-                setCont={setCont}
-                disabled={disabled}
-                setDisabled={setDisabled}
-                handleAgregar={handleAgregar}
-            />
+        {
+            isInCart(item.id)
+                ? <Link to="/cart" className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Terminar mi compra</Link>
+                : <ItemCount
+                    max={item.stock}
+                    cont={cont}
+                    setCont={setCont}
+                    disabled={disabled}
+                    setDisabled={setDisabled}
+                    handleAgregar={handleAgregar}
+                />
+            }
             <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" onClick={handleVolver}>Volver</button>
-                
         </div>
     )
 
