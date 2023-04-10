@@ -8,3 +8,17 @@
         color: rgb(221, 221, 224);
     }
 }
+
+.cart-widget {
+    font-size: 26px;
+    color: white;
+    visibility: hidden;
+    min-width: 100px;
+    opacity: 0;
+    transition: all .3s;
+}
+
+.cart-widget-active {
+    visibility: visible;
+    opacity: 1;
+}

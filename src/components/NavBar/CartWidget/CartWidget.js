@@ -6,10 +6,10 @@ import { useContext } from 'react'
 
 export const CartWidget = () => {
 
-    const { totalCantidad } = useContext(CartContext)
+    const { cart:cartin, totalCantidad } = useContext(CartContext)
 
     return (
-        <Link to="/cart">
+        <Link to="/cart" className={`cart-widget ${cartin.length > 0 ? 'cart-widget-active' : ''}`}>
             <div className='container__cart'>
                 <img src={cart} alt="carrito" className='color__cart' />
                 <p className='p__carrito'>{totalCantidad()}</p>

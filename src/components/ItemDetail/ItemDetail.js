@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { useState, useContext } from "react"
 import { ItemCount } from "../ItemCount/ItemCount"
 import { CartContext } from "../../context/CartContext"
+import LowStockMsg from "./LowStockMsg"
 
 export const ItemDetail = ({item}) => {
 
@@ -32,6 +33,7 @@ export const ItemDetail = ({item}) => {
             </div>
             <p className="text-center">${item.precio}</p>
             <p className="text-center">{item.litros}</p>
+            { item.stock <= 5 && <LowStockMsg stock={item.stock}/>}
         {
             isInCart(item.id)
                 ? <Link to="/cart" className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Terminar mi compra</Link>

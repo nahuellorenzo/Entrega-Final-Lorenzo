@@ -1,10 +1,21 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { BsFillTrashFill } from 'react-icons/bs'
+import { Link } from "react-router-dom"
 
 const Cart = () => {
 
     const { cart, totalCompra, eliminarDelCarrito, vaciarCarrito} = useContext(CartContext)
+
+    if (cart.length === 0) {
+        return (
+            <div className="container my-5">
+                <h2>No tienes productos agregados</h2>
+                <hr/>
+                <Link to="/" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Ir a comprar</Link>
+            </div>
+        )
+    }
 
     return (
         <div className="container my-5">
