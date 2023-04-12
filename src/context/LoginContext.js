@@ -23,8 +23,8 @@ const MOCK_USERS = [
 
 export const LoginProvider = ({children}) => {
     const [user, setUser] = useState({
-        email: null,
-        logged: false
+        email: 'tutor@coder.com',
+        logged: true
     })
     console.log(user)
 
