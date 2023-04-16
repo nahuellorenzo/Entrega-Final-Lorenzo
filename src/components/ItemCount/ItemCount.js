@@ -18,15 +18,14 @@ export const ItemCount = ( {max, cont, setCont, disabled, setDisabled, handleAgr
     }
 
     return (
-        <div>
-            <div className="flex items-center justify-center mb-2">
-                <button className="border border-solid border-black text-xl py-1 px-1 rounded" onClick={hanldeRestar} disabled={disabled}>-</button>
-                <p className='text-xl'>{cont}</p>
-                <button className="border border-solid border-black text-xl py-1 px-1 rounded" onClick={handleContador}>+</button>
-            </div>
-            <div className="flex items-center justify-center">
-                <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" onClick={handleAgregar}>Agregar al carrito</button>
-            </div>
-        </div>
+        <div class="flex flex-col items-center justify-center">
+  <div class="flex items-center justify-center mb-4">
+    <button class="text-2xl text-gray-700 hover:text-gray-900 focus:outline-none border border-solid border-gray-500 rounded-full h-10 w-10 flex items-center justify-center transition duration-300" onClick={hanldeRestar} disabled={disabled}>-</button>
+    <p class="text-2xl font-bold mx-4">{cont}</p>
+    <button class="text-2xl text-gray-700 hover:text-gray-900 focus:outline-none border border-solid border-gray-500 rounded-full h-10 w-10 flex items-center justify-center transition duration-300" onClick={handleContador}>+</button>
+  </div>
+  <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition duration-300" onClick={handleAgregar}>Agregar al carrito</button>
+</div>
+
     )
 }
