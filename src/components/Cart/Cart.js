@@ -11,10 +11,12 @@ const Cart = () => {
 
   if (cart.length === 0) {
     return (
-      <div className="container my-5">
-        <h2>No tienes productos agregados</h2>
-        <hr />
-        <Link to="/" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Ir a comprar</Link>
+      <div class="container mx-auto my-5 px-4">
+        <h2 class="text-2xl font-bold mb-2">No tienes productos agregados</h2>
+        <hr class="my-2"/>
+          <Link to="/" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+            Ir a comprar
+          </Link>
       </div>
     )
   }
