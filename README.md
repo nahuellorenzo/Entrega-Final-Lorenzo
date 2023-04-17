@@ -1,3 +1,7 @@
+#Aplicacion de bebidas Nahue Drinks
+Es una aplicacion en React JS utilizando el framework de css tailwindcss.
+La aplicacion web es un carrito de compras de bebidas.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
