@@ -7,19 +7,20 @@ import { db } from "../../firebase/config"
 import { collection, query, where, addDoc, writeBatch, documentId, getDocs } from "firebase/firestore"
 import { Formik } from 'formik'
 import * as Yup from 'yup';
+import { BsClipboard } from 'react-icons/bs'
 
 const schema = Yup.object().shape({
     nombre: Yup.string()
-                .required('Este campo es obligatorio')
-                .min(4, 'Mínimo 4 caracteres')
-                .max(30, 'Máximo 30 caracteres'),
+        .required('Este campo es obligatorio')
+        .min(4, 'Mínimo 4 caracteres')
+        .max(30, 'Máximo 30 caracteres'),
     direccion: Yup.string()
-                .required('Este campo es obligatorio')
-                .min(6, 'Mínimo 6 caracteres')
-                .max(30, 'Máximo 30 caracteres'),
+        .required('Este campo es obligatorio')
+        .min(6, 'Mínimo 6 caracteres')
+        .max(30, 'Máximo 30 caracteres'),
     email: Yup.string()
-                .email('El email es inválido')
-                .required('Este campo es obligatorio')
+        .email('El email es inválido')
+        .required('Este campo es obligatorio')
 })
 
 
@@ -28,7 +29,7 @@ const Checkout = () => {
     const { user } = useContext(LoginContext)
 
     const [orderId, setOrderId] = useState(null)
-    
+
     const generarOrden = async (values) => {
         const orden = {
             cliente: values,
@@ -44,7 +45,7 @@ const Checkout = () => {
 
         const outOfStock = []
 
-        const itemsRef = query(productosRef, where( documentId(), 'in', cart.map(prod => prod.id) ))
+        const itemsRef = query(productosRef, where(documentId(), 'in', cart.map(prod => prod.id)))
         const response = await getDocs(itemsRef)
 
         response.docs.forEach((doc) => {
@@ -73,12 +74,19 @@ const Checkout = () => {
         }
     }
 
+    const handleCopyOrder = () => {
+        navigator.clipboard.writeText(orderId);
+        alert('¡El número de orden se ha copiado al portapapeles!');
+    }
+
     if (orderId) {
         return (
             <div className="container mx-auto my-5">
                 <h2>Tu orden se registró con éxito!</h2>
                 <hr />
-                <p>Guarda tu número de orden: {orderId}</p>
+                <div className="container mx-auto my-5 flex items-center">
+                    <p>Guarda tu número de orden: <span>{orderId}</span></p> <BsClipboard className="ml-2" title="Copy!" onClick={handleCopyOrder} style={{cursor:'pointer'}}/>
+                </div>
                 <div style={{ marginTop: '15px' }}>
                     <Link className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" to="/">Volver al inicio</Link>
                 </div>
@@ -104,9 +112,9 @@ const Checkout = () => {
                 validationSchema={schema}
                 onSubmit={generarOrden}
             >
-                {( {values, errors, handleChange, handleSubmit, isSubmitting} ) => (
+                {({ values, errors, handleChange, handleSubmit, isSubmitting }) => (
                     <form onSubmit={handleSubmit}>
-                        <input 
+                        <input
                             onChange={handleChange}
                             value={values.nombre}
                             type={'text'}
@@ -116,7 +124,7 @@ const Checkout = () => {
                         />
                         {errors.nombre && <p className="alert alert-danger">{errors.nombre}</p>}
 
-                        <input 
+                        <input
                             onChange={handleChange}
                             value={values.direccion}
                             type={'text'}
@@ -126,7 +134,7 @@ const Checkout = () => {
                         />
                         {errors.direccion && <p className="alert alert-danger">{errors.direccion}</p>}
 
-                        <input 
+                        <input
                             onChange={handleChange}
                             value={values.email}
                             type={'email'}
