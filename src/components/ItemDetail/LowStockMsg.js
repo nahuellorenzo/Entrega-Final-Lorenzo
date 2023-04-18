@@ -1,6 +1,14 @@
 
 const LowStockMsg = ({stock}) => {
 
+    if(stock === 0){
+        return(
+            <p><strong>
+                No quedan unidades :(
+            </strong></p>
+        )
+    }
+
     return (
         <p><strong>
             {
