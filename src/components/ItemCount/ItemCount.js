@@ -2,8 +2,7 @@
 export const ItemCount = ({ max, cont, setCont, disabled, setDisabled, handleAgregar }) => {
 
     const handleContador = () => {
-        if (max === 0)
-            cont < max && setCont(cont + 1)
+        cont < max && setCont(cont + 1)
         if (Number(cont) === 1) {
             setDisabled(false)
         }
